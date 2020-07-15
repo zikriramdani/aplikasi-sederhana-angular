@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit {
 
   onSearchChange(term: string){
     this.searchTerm.next(term);
-    console.log('Teks', this.searchTerm.next(term))
+    console.log('Teks', term)
   }
 
 }
