@@ -13,7 +13,7 @@ import { Film } from '../models/film';
 @Injectable()
 export class FilmsService {
   urlGet = 'https://ghibliapi.herokuapp.com/films';
-  urlGetId = 'https://ghibliapi.herokuapp.com/films';
+
   // Buat variable imageserver dan token image
   imageServer = "https://firebasestorage.googleapis.com/v0/b/ghibli-angular-4.appspot.com/o/";
   tokenImage = "?alt=media&token=d0452e8a-6be1-41d0-87c0-afae5f618501";
@@ -38,12 +38,21 @@ export class FilmsService {
     return this.imageServer + filmId + ".jpg" + this.tokenImage;
   }
 
-  
   // fungsi mengambil data film id di api
   fetchDataFilmsId(_id: String): Observable<String> {
-    return this.http.get<any>(this.urlGetId + '/' + _id)
+    return this.http.get<any>(this.urlGet + '/' + _id)
       .pipe(map((response: any) => {
         // console.log('url', response)
+        return response;
+      })
+    );
+  }
+
+  // fungsi mengambil data search film id di api
+  searchFilm(term: String): Observable<String> {
+    return this.http.get<Film[]>(this.urlGet + '/?title=' + term)
+      .pipe(map((response: any) => {
+        console.log('url', term)
         return response;
       })
     );

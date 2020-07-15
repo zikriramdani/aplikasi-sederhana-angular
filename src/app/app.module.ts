@@ -28,7 +28,7 @@ import { AppRoutingModule, RoutedComponents } from './app-routing.module';
     DetailItemComponent,
     // RoutedComponents,
     FirebaseImagePipe,
-    TruncatePipe,
+    TruncatePipe
   ],
   imports: [
     HttpClientModule,
