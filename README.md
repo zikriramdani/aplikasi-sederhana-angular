@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.1.
 
-# API
+## API
 
 https://ghibliapi.herokuapp.com/films
 
