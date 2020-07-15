@@ -19,14 +19,15 @@ import { FilmsService } from './services/films.service';
 import { FirebaseImagePipe } from './pipe/FirebaseImagePipe';
 import { TruncatePipe } from './pipe/TruncatePipe';
 
-import { AppRoutingModule, RoutedComponents } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
+
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DetailItemComponent,
-    // RoutedComponents,
     FirebaseImagePipe,
     TruncatePipe
   ],
@@ -37,9 +38,12 @@ import { AppRoutingModule, RoutedComponents } from './app-routing.module';
     BrowserAnimationsModule,
     FormsModule,
     MaterialModule,
+    Ng2SearchPipeModule,
   ],
   exports: [
     MaterialModule,
+    Ng2SearchPipeModule,
+
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA],
   providers: [ FilmsService ],
