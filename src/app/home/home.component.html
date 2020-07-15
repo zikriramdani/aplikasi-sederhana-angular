@@ -1,0 +1,21 @@
+<mat-grid-list cols="4" rowHeight="500px">
+    <div *ngIf="films">
+      <mat-grid-tile *ngFor="let film of films">
+        <mat-card class="example-card">
+          <img mat-card-image [src]="film.id | toFirebaseImage" alt="Photo of a Shiba Inu">
+          <mat-card-title>{{ film.title }}</mat-card-title>
+          <mat-card-content>
+            <p>
+              {{ film.description | truncate : 100 }}
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button routerLink="/details/">
+              Details
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
+    </div>
+    <div *ngIf="!films" class="text-center">Fetching data....</div>
+</mat-grid-list>
