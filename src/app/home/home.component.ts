@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
     private filmsService: FilmsService
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.onGet();
   }
 

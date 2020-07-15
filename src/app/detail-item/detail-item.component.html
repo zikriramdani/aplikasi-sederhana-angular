@@ -1,1 +1,10 @@
-<p>detail-item works!</p>
+<p><a routerLink="/">Home</a> / <b>Details</b> / {{films?.title}}</p>
+<mat-card class="example-card">
+    <img mat-card-image [src]="films?.id | toFirebaseImage">
+    <mat-card-title>{{ films?.title }}</mat-card-title>
+    <mat-card-content>
+        <p>
+        {{ films?.description }}
+        </p>
+    </mat-card-content>
+</mat-card>
